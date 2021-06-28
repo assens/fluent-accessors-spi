@@ -15,6 +15,24 @@
 		<org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
 	</properties>
 
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.2.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.mapstruct</groupId>
@@ -41,4 +59,19 @@
 		<developerConnection>scm:git:ssh://github.com:assens/fluent-accessors-spi.git</developerConnection>
 		<url>https://github.com/assens/fluent-accessors-spi/tree/main</url>
 	</scm>
+
+	<distributionManagement>
+		<site>
+			<id>azdio-sites</id>
+			<url>dav:${project.url}</url>
+		</site>
+		<repository>
+			<id>azdio-tv-releases</id>
+			<url>https://nexus.azdio-tv.com/repository/maven-releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>azdio-tv-snapshots</id>
+			<url>https://nexus.azdio-tv.com/repository/maven-snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
 </project>
